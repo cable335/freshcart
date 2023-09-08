@@ -26,7 +26,7 @@
 @endsection
 
 @section('js')
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
     <script>
         function editmode() {
@@ -38,14 +38,14 @@
             btns.classList.remove('d-none');
             btns.classList.add('d-flex');
         }
+    </script>
 
-        </script>
-        @if($errors->first())
+    @if ($errors->first())
         <script>
             Swal.fire({
-                icon:'error',
-                title:'{{ $errors->first() }}',
+                icon: 'error',
+                title: '{{ $errors->first() }}',
             })
         </script>
-        @endif
+    @endif
 @endsection
