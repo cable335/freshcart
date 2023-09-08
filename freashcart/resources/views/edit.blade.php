@@ -462,7 +462,7 @@
                             <div class="col-12">
                                 {{-- enctype="multipart/form-data" 存照片必要 --}}
                                 {{-- form必要加入method="POST" --}}
-                                <form action="{{ route('prod.update', ['id'=>$product->id]) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('update', ['id'=>$product->id]) }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     @method('put')
                                     <div>產品名稱
