@@ -1,6 +1,6 @@
 @extends('layout.index')
 @section('main')
-    <div class="contaniner">
+    <div class="container">
         <form action="{{ route('user.info.update') }}" method="POST" class="d-flex flex-column row-gap-5">
             @csrf
             <h1>帳號資訊</h1>
@@ -39,7 +39,13 @@
             btns.classList.add('d-flex');
         }
 
-        
-
-    </script>
+        </script>
+        @if($errors->first())
+        <script>
+            Swal.fire({
+                icon:'error',
+                title:'{{ $errors->first() }}',
+            })
+        </script>
+        @endif
 @endsection
