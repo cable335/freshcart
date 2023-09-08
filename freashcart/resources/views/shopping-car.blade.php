@@ -116,6 +116,7 @@
                         </div>
                     </div>
                     <div class="col-xxl-2 col-lg-3 col-3 d-flex justify-content-end ">
+                        <a style="margin: auto 0;" href="{{ route('message') }}">文章大樓</a>
                         <a class="d-flex align-items-center px-2" href="">
                             <img class="w-h-20" src="./img/icon/heart.png" alt="">
                         </a>

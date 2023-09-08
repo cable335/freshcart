@@ -69,7 +69,11 @@ class messageController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $message = message::find($id);
+        $message->update([
+            'desc' => $request->message,
+        ]);
+        return redirect(route('message'));
     }
 
     /**
