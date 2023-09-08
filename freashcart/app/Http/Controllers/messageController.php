@@ -13,6 +13,7 @@ class messageController extends Controller
      */
     public function index()
     {
+        // 寫with可以將model的副程式傳入。 在dd裡面可以看到（要寫才能看到
         $messages = Message::with('reply')->get();
         return view('message.message',compact('messages'));
     }

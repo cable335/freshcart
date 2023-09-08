@@ -40,12 +40,12 @@ require __DIR__.'/auth.php';
 Route::get('/',[FrontController::class, 'index'])->name('shopping-car');
 
 Route::middleware(['auth'])->prefix('')->group(function () {
-Route::get('/cart',[ProductController::class, 'index'])->name('cart');
-Route::get('/create',[ProductController::class, 'create'])->name('create');
-Route::post('/store',[ProductController::class, 'store'])->name('store');
-Route::get('/edit/{id}',[ProductController::class, 'edit'])->name('edit');
-Route::put('/update/{id}',[ProductController::class, 'update'])->name('update');
-Route::delete('/delete/{id}',[ProductController::class, 'destroy'])->name('delete');
+    Route::get('/cart',[ProductController::class, 'index'])->name('cart');
+    Route::get('/create',[ProductController::class, 'create'])->name('create');
+    Route::post('/store',[ProductController::class, 'store'])->name('store');
+    Route::get('/edit/{id}',[ProductController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}',[ProductController::class, 'update'])->name('prod.update');
+    Route::delete('/delete/{id}',[ProductController::class, 'destroy'])->name('delete');
 });
 
 
@@ -58,8 +58,8 @@ Route::get('/message',[messageController::class, 'index'])->name('message');
 Route::post('/messae/store', [messageController::class, 'store'])->name('messageStore');
 Route::post('/message/create',[messageController::class, 'create'])->name('message.create');
 Route::get('/message/edit/{id}',[messageController::class, 'edit'])->name('message.edit');
-Route::put('/update/{id}', [messageController::class, 'update'])->name('messageUpdate');
-Route::delete('/destroy/{id}', [messageController::class, 'destroy'])->name('messageDestroy');
+Route::put('/message/update/{id}', [messageController::class, 'update'])->name('messageUpdate');
+Route::delete('/message/destroy/{id}', [messageController::class, 'destroy'])->name('messageDestroy');
 
 Route::middleware('auth')->prefix('/reply')->group(function () {
     Route::put('/update/{id}', [ReplyController::class, 'update'])->name('replyUpdate');
