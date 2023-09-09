@@ -27,7 +27,7 @@
                         <button class="btn dropdown-toggle font-14-index p-x-0" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <img class="flag-img mb-1 me-1" src="./img/flag/united-kingdom.png" alt="">
-                            English
+                            細節中的細節
                             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11.2" fill="currentColor"
                                 class="bi bi-chevron-down" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -36,9 +36,9 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('type.index') }}"><img class="flag-img mb-1 me-2"
-                                        src="./img/flag/united-kingdom.png" alt="">English</a></li>
+                                        src="./img/flag/united-kingdom.png" alt="">type list</a></li>
                             <li><a class="dropdown-item " href="{{ route('cart') }}"><img class="flag-img mb-1 me-2"
-                                        src="./img/flag/germany.png" alt="">Deutsh</a></li>
+                                        src="./img/flag/germany.png" alt="">cart list</a></li>
                         </ul>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
             <div class="container">
                 <div class="row fake">
                     <div class="col-xxl-2 col-lg-3 col-3 d-flex align-items-center">
-                        <a href=""><img src="./img/freshcart-logo.svg" alt=""></a>
+                        <a href="{{ route('shopping-car') }}"><img src="./img/freshcart-logo.svg" alt=""></a>
                     </div>
                     <div class="col-xxl-7 col-lg-6 col-6">
                         <div class="row">
@@ -119,13 +119,17 @@
                     <div class="col-xxl-3 col-lg-3 col-3 d-flex justify-content-end ">
                         @auth
                         <div  style="margin: auto 0;">hi,{{ Auth::user()->name}}</div>
-                        <div></div>
+                        <form method="post" action="{{ route('logout') }}" style="margin: auto 0;">
+                            @csrf
+                            <button type="submit" class="btn border" style="padding: 3px 6px;" >登出</button>
+                        </form>
                         @endauth
 
                         @guest
                         <div>
                             <a href="{{ route('login') }}">
                             還沒有登入哦 點此登入</a>
+
                         </div>
                         @endguest
                         <a style="margin: auto 0;" href="{{ route('message') }}">文章大樓</a>

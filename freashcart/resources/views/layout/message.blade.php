@@ -15,7 +15,7 @@
         <div class="menu-hide p-3">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                    <a href="https://freshcart.codescandy.com/dashboard/order-list.html"><img
+                    <a href="{{ route('shopping-car') }}"><img
                             src="https://freshcart.codescandy.com/assets/images/logo/freshcart-logo.svg"
                             alt=""></a>
                 </h5>
