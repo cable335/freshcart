@@ -451,6 +451,7 @@
                 <div class="text">
                     <a href="#" class="green">Dashboard</a>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbspOrder List
                 </div>
+            </div>
                 <!-- 標題結束 -->
                 @yield('main')
         </div>

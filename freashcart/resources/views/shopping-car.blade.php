@@ -53,7 +53,7 @@
                     <div class="col-xxl-2 col-lg-3 col-3 d-flex align-items-center">
                         <a href=""><img src="./img/freshcart-logo.svg" alt=""></a>
                     </div>
-                    <div class="col-xxl-8 col-lg-6 col-6">
+                    <div class="col-xxl-6 col-lg-6 col-6">
                         <div class="row">
                             <div class="col-8 px-1 d-flex align-items-center">
                                 <input type="text" class="form-control" placeholder="Search for products"
@@ -115,7 +115,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xxl-2 col-lg-3 col-3 d-flex justify-content-end ">
+                    <div class="col-xxl-4 col-lg-3 col-3 d-flex justify-content-end ">
+                        @auth
+                        <div  style="margin: auto 0;">hi,{{ Auth::user()->name}}</div>
+                        <form method="post" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit">登出</button>
+                    </form>
+                        @endauth
+
+                        @guest
+                        <div style="margin: auto 10px;">
+                            <a  href="{{ route('login') }}">
+                            還沒有登入哦 點此登入</a>
+                        </div>
+                        @endguest
                         <a style="margin: auto 0;" href="{{ route('message') }}">文章大樓</a>
                         <a class="d-flex align-items-center px-2" href="">
                             <img class="w-h-20" src="./img/icon/heart.png" alt="">

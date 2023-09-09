@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\messageController;
@@ -70,3 +71,12 @@ Route::middleware('auth')->prefix('/reply')->group(function () {
 
 Route::middleware('auth')->get('/user/infomation',[FrontController::class, 'user_info'])->name('infomation');
 Route::middleware('auth')->post('/user/infomation/upadte',[FrontController::class, 'user_info_update'])->name('user.info.update');
+
+// 這裡是checkout部分
+Route::middleware('auth')->get('/user/chekout',[CheckoutController::class,'checkout'])->name('chekout');
+Route::middleware('auth')->post('/user/chekout.store',[CheckoutController::class,'checkout_store'])->name('chekout.store');
+Route::middleware('auth')->get('/user/chekout/information',[CheckoutController::class,'checkout_information'])->name('chekout.information');
+Route::middleware('auth')->post('/user/chekout/information.store',[CheckoutController::class,'checkout_information_store'])->name('chekout.information.store');
+Route::middleware('auth')->get('/user/chekout/information/pay',[CheckoutController::class,'checkout_pay'])->name('chekout.pay');
+Route::middleware('auth')->post('/user/chekout/information/pay.store',[CheckoutController::class,'checkout_pay_store'])->name('chekout.pay.store');
+Route::middleware('auth')->get('/user/chekout/information/pay/ok',[CheckoutController::class,'checkout_ok'])->name('chekout.ok');

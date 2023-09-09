@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/shopping-car.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/cart.css') }}" />
 </head>
 
 <body>
@@ -53,7 +54,7 @@
                     <div class="col-xxl-2 col-lg-3 col-3 d-flex align-items-center">
                         <a href=""><img src="./img/freshcart-logo.svg" alt=""></a>
                     </div>
-                    <div class="col-xxl-8 col-lg-6 col-6">
+                    <div class="col-xxl-7 col-lg-6 col-6">
                         <div class="row">
                             <div class="col-8 px-1 d-flex align-items-center">
                                 <input type="text" class="form-control" placeholder="Search for products"
@@ -115,7 +116,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xxl-2 col-lg-3 col-3 d-flex justify-content-end ">
+                    <div class="col-xxl-3 col-lg-3 col-3 d-flex justify-content-end ">
+                        @auth
+                        <div  style="margin: auto 0;">hi,{{ Auth::user()->name}}</div>
+                        <div></div>
+                        @endauth
+
+                        @guest
+                        <div>
+                            <a href="{{ route('login') }}">
+                            還沒有登入哦 點此登入</a>
+                        </div>
+                        @endguest
                         <a style="margin: auto 0;" href="{{ route('message') }}">文章大樓</a>
                         <a class="d-flex align-items-center px-2" href="">
                             <img class="w-h-20" src="./img/icon/heart.png" alt="">
@@ -747,7 +759,6 @@
         </div>
     </div>
     <hr>
-    </div>
     @yield('main')
 
     <!-- footer -->

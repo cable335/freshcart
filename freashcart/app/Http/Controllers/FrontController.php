@@ -17,12 +17,17 @@ class FrontController extends Controller
 
     public function user_info(Request $request)
     {
+        // 法一
+        // dd(Auth::user());
+        // $user = Auth::user();
+        
         $user = $request->user();
         return view('userSetting',compact('user'));
     }
 
     public function user_info_update(Request $request)
     {
+        //       檢查欄位函數
         $request->validate([
             'name' =>'required|max:255',
         ],[
