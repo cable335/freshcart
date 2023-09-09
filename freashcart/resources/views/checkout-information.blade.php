@@ -10,11 +10,11 @@
         <form action="{{ route('chekout.information.store') }}" style="position: relative" method="POST" >
             @csrf
             <div class="mb-5" >
-                <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="收件者姓名" value="{{ old('name',) }}">
-                <input type="text" class="form-control" id="exampleInputPassword1" name="addr" placeholder="收件者地址">
-                <input type="date" class="form-control" id="exampleInputPassword1"name="date">
-                <input type="number" class="form-control" id="exampleInputPassword1" name="tel" placeholder="收件者聯絡電話">
-                <input type="text" class="form-control" id="exampleInputPassword1" name="re" placeholder="備註">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="收件者姓名" value="{{ old('name',$name) }}">
+                <input type="text" class="form-control" id="exampleInputPassword1" name="addr" placeholder="收件者地址" value="{{ old('addr',$addr)}}">
+                <input type="date" class="form-control" id="exampleInputPassword1"name="date" value="{{ old('date',$date)}}">
+                <input type="tel" class="form-control" id="exampleInputPassword1" name="tel" placeholder="收件者聯絡電話" value="{{ old('tel',$tel)}}">
+                <input type="text" class="form-control" id="exampleInputPassword1" name="re" placeholder="備註" value="{{ old('re',$re)}}">
 
             </div>
             <div class="button w-100" style="position: absolute; bottom:0px; ">

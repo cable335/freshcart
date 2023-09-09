@@ -15,9 +15,13 @@ class CheckoutController extends Controller
 
 
     public function checkout_information(Request $request){
-        $information = $request->session()->get('information','');
+        $name = $request->session()->get('name','');
+        $addr = $request->session()->get('addr','');
+        $date = $request->session()->get('date','');
+        $tel = $request->session()->get('tel','');
+        $re = $request->session()->get('re','');
 
-        return view('checkout-information',compact('information'));
+        return view('checkout-information',compact('name','addr','date','tel','re'));
     }
 
     public function checkout_information_store(Request $request){
@@ -29,14 +33,21 @@ class CheckoutController extends Controller
             're' => 'required',
         ]);
         $request->session()->put('name',$request->name);
-
+        $request->session()->put('addr',$request->addr);
+        $request->session()->put('date',$request->date);
+        $request->session()->put('tel',$request->tel);
+        $request->session()->put('re',$request->re);
+        // $request->session()->put([
+        //     'date',$request->date,
+        //     'tel',$request->tel,
+        //     're',$request->re,
+        // ]);
+        // dd(session()->all());
         return redirect(route('chekout.pay'));
     }
 
     public function checkout_pay(Request $request){
-        $name = $request->session()->get('name','');
-
-        return view('checkout-pay',compact('name'));
+        return view('checkout-pay');
     }
 
     public function checkout_pay_store(Request $request){

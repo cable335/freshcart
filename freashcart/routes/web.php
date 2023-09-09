@@ -68,7 +68,7 @@ Route::middleware('auth')->prefix('/reply')->group(function () {
     Route::delete('/destroy/{id}', [ReplyController::class, 'destroy'])->name('replyDestroy');
 });
 
-
+// 使用者資訊部分
 Route::middleware('auth')->get('/user/infomation',[FrontController::class, 'user_info'])->name('infomation');
 Route::middleware('auth')->post('/user/infomation/upadte',[FrontController::class, 'user_info_update'])->name('user.info.update');
 

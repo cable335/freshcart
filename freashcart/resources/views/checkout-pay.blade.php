@@ -1,16 +1,15 @@
 @extends('layout.index')
 @section('main')
-    <!-- 結帳標題 -->
-    <h1>Checkout</h1>
-    <p>Already have an account? Click here to <a href="#">Sign in</a> .</p>
-    <!-- 付款資訊 -->
-    <div class="payment">
-        <i class="bi bi-credit-card"></i> 付款資訊
+<!-- 銀行匯款 -->
+<div class="container mb-5"  style="position: relative">
+    <!-- Order List標題 -->
+    <div class="order">Checkout</div>
+    <!-- Dashboard標題 -->
+    <div class="text">
+        <a href="#" class="green">Dashboard</a>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbspOrder List
     </div>
-    <!-- 銀行匯款 -->
-    <form action="{{ route('chekout.pay.store') }}" method="POST" method="POST">
-        @csrf
-        <div class="container"  style="position: relative">
+<form action="{{ route('chekout.pay.store') }}" method="POST" method="POST">
+    @csrf
     <div class="pay-options border" style="position:relative">
         <input type="radio" id="bank-checkbox" name="pay" style="position: absolute;top:70px;">
         <label for="bank-checkbox" class="ms-3">
@@ -24,7 +23,7 @@
     </div>
     <!-- 線上刷卡 -->
     <div class="pay-options border mt-2">
-    <input type="radio" id="online-creditcard-checkbox" name="pay"  style="position: absolute;top:175px;">
+    <input type="radio" id="online-creditcard-checkbox" name="pay"  style="position: absolute;bottom:25px;">
         <label for="online-creditcard-checkbox">
             <ul>線上付款</ul>
             <li>本站線上付款為綠界金流</li>
