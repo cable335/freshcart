@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackendController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontController;
@@ -21,10 +22,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -38,9 +35,20 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
+
 Route::get('/',[FrontController::class, 'index'])->name('shopping-car');
 
-Route::middleware(['auth','isAdmin'])->prefix('')->group(function () {
+Route::get('/product',[FrontController::class,'fontProduct'])->name('front.product');
+
+
+Route::middleware(['auth','userRole:1'])->group(function (){
+    Route::get('/admin.index',[BackendController::class, 'index'])->name('backend.index');
+});
+
+
+
+// crud 主頁產品  （後台）
+Route::middleware(['auth','userRole:1'])->prefix('')->group(function () {
     Route::get('/cart',[ProductController::class, 'index'])->name('cart');
     Route::get('/create',[ProductController::class, 'create'])->name('create');
     Route::post('/store',[ProductController::class, 'store'])->name('store');
@@ -49,11 +57,13 @@ Route::middleware(['auth','isAdmin'])->prefix('')->group(function () {
     Route::delete('/delete/{id}',[ProductController::class, 'destroy'])->name('delete');
 });
 
-
+// crud （後台）
 Route::middleware(['auth'])->prefix('')->group(function () {
 Route::resource('/type', TypeController::class);
 });
 
+
+// message 留言區部分
 Route::post('/replayStore/{id}', [messageController::class, 'replayStore'])->name('replayStore');
 Route::get('/message',[messageController::class, 'index'])->name('message');
 Route::post('/messae/store', [messageController::class, 'store'])->name('messageStore');
@@ -68,8 +78,10 @@ Route::middleware('auth')->prefix('/reply')->group(function () {
     Route::delete('/destroy/{id}', [ReplyController::class, 'destroy'])->name('replyDestroy');
 });
 
+
+
 // 使用者資訊部分
-Route::middleware('auth')->get('/user/infomation',[FrontController::class, 'user_info'])->name('infomation');
+Route::middleware('auth','userRole:2')->get('/user/infomation',[FrontController::class, 'user_info'])->name('infomation');
 Route::middleware('auth')->post('/user/infomation/upadte',[FrontController::class, 'user_info_update'])->name('user.info.update');
 
 // 這裡是checkout部分
@@ -80,3 +92,5 @@ Route::middleware('auth')->post('/user/chekout/information.store',[CheckoutContr
 Route::middleware('auth')->get('/user/chekout/information/pay',[CheckoutController::class,'checkout_pay'])->name('chekout.pay');
 Route::middleware('auth')->post('/user/chekout/information/pay.store',[CheckoutController::class,'checkout_pay_store'])->name('chekout.pay.store');
 Route::middleware('auth')->get('/user/chekout/information/pay/ok',[CheckoutController::class,'checkout_ok'])->name('chekout.ok');
+
+Route::middleware('auth')->post('/products/add.carts',[FrontController::class,'add_cart'])->name('front.addcart');

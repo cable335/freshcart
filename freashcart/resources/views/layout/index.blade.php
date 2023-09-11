@@ -133,8 +133,8 @@
                         </div>
                         @endguest
                         <a style="margin: auto 0;" href="{{ route('message') }}">文章大樓</a>
-                        <a class="d-flex align-items-center px-2" href="">
-                            <img class="w-h-20" src="./img/icon/heart.png" alt="">
+                        <a class="d-flex align-items-center px-2" href="{{ route('chekout') }}">
+                            <i class="bi bi-cart w-h-20"></i>
                         </a>
                         <button class="btn px-2" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasExample-1" aria-controls="offcanvasExample">
@@ -636,126 +636,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="btn-group">
-                            <button type="button" class="btn dropdown-toggle font-14" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Home
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn dropdown-toggle font-14" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Shop
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn dropdown-toggle font-14" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Stores
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn dropdown-toggle font-14" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Mega menu
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn dropdown-toggle font-14" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Pages
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn dropdown-toggle font-14" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Account
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn dropdown-toggle font-14" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dashboard
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn dropdown-toggle font-14" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Docs
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
+                            <a href="{{ route('front.product') }}">product</a>
                     </div>
 
                 </div>
@@ -901,7 +782,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-    <script src="./js/js.js"></script>
+
     @yield('js')
 </body>
 

@@ -51,6 +51,8 @@ class Kernel extends HttpKernel
      * Aliases may be used instead of class names to conveniently assign middleware to routes and groups.
      *
      * @var array<string, class-string|string>
+     *
+     *  做帳號權限分級 方法一   'isAdmin' => \App\Http\Middleware\IsAdminAccount::class,
      */
     protected $middlewareAliases = [
         'auth' => \App\Http\Middleware\Authenticate::class,
@@ -64,6 +66,6 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'isAdmin' => \App\Http\Middleware\IsAdminAccount::class,
+        'userRole' =>\App\Http\Middleware\RoleWeight::class,
     ];
 }

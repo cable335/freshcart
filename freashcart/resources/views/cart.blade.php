@@ -1,5 +1,13 @@
 @extends('layout.template')
 @section('main')
+<div class="container p-4 container-md p-5">
+    <!-- Order List標題 -->
+    <div class="order">order List</div>
+    <!-- Dashboard標題 -->
+    <div class="text">
+        <a href="#" class="green">Dashboard</a>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbspOrder List
+    </div>
+</div>
     <div class="big-box p-4 rounded rounded-4 border mt-4">
         <!-- 大方塊裡的head -->
         <div class="box-head">

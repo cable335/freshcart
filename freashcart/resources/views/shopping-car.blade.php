@@ -361,3 +361,7 @@
         </div>
     </div>
 @endsection
+
+@section('js')
+<script src="./js/js.js"></script>
+@endsection
