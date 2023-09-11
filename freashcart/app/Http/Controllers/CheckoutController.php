@@ -29,7 +29,7 @@ class CheckoutController extends Controller
             'name' => 'required',
             'addr' => 'required',
             'date' => 'required',
-            'tel' => 'required',
+            'tel' => 'required|max:10',
             're' => 'required',
         ]);
         $request->session()->put('name',$request->name);

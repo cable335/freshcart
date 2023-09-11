@@ -40,7 +40,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/',[FrontController::class, 'index'])->name('shopping-car');
 
-Route::middleware(['auth'])->prefix('')->group(function () {
+Route::middleware(['auth','isAdmin'])->prefix('')->group(function () {
     Route::get('/cart',[ProductController::class, 'index'])->name('cart');
     Route::get('/create',[ProductController::class, 'create'])->name('create');
     Route::post('/store',[ProductController::class, 'store'])->name('store');
