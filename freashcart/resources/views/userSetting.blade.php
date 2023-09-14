@@ -27,7 +27,7 @@
             </div>
             <div class="col-6 d-flex flex-column justify-center align-items-center">
                 <img src="{{ asset('img/qq.png') }}" alt="" class="w-75">
-                <a href="{{ route('chekout') }}" style="color:red;" >
+                <a href="{{ route('other.checkout') }}" style="color:red;" >
                     <h1>
                         老子強迫你在這邊結帳
                     </h1>

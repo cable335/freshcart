@@ -94,3 +94,18 @@ Route::middleware('auth')->post('/user/chekout/information/pay.store',[CheckoutC
 Route::middleware('auth')->get('/user/chekout/information/pay/ok',[CheckoutController::class,'checkout_ok'])->name('chekout.ok');
 
 Route::middleware('auth')->post('/products/add.carts',[FrontController::class,'add_cart'])->name('front.addcart');
+
+
+// 這裡是other checkout部分
+Route::middleware('auth','userRole:2')->group(function (){
+    Route::get('user/otherCheckout',[CheckoutController::class,'other_checkout'])->name('other.checkout');
+    Route::put('/user/otherCheckout/update',[CheckoutController::class,'other_checkout_updateQty'])->name('other.checkout.updateQty');
+    Route::delete('/user/otherCheckout/delete',[CheckoutController::class,'other_checkout_delete'])->name('other.checkout.delete');
+    Route::post('/user/otherCheckout.store',[CheckoutController::class,'other_checkout_store'])->name('other.checkout.store');
+    Route::get('/user/otherCheckout/delivery',[CheckoutController::class,'other_checkout_delivery'])->name('other.checkout.delivery');
+    Route::post('/user/otherCheckout/delivery.store',[CheckoutController::class,'other_checkout_delivery_store'])->name('other.checkout.delivery.store');
+    Route::get('/user/otherCheckout/pay',[CheckoutController::class,'other_checkout_pay'])->name('other.checkout.pay');
+    Route::post('/user/otherCheckout/pay.store',[CheckoutController::class,'other_checkout_pay_store'])->name('other.checkout.pay.store');
+    Route::get('/user/otherCheckout/complete',[CheckoutController::class,'other_checkout_complete'])->name('other.checkout.complete');
+});
+

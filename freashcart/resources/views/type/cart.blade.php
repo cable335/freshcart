@@ -1,6 +1,6 @@
 @extends('layout.template')
 @section('main')
-    <div class="container p-4 container-md p-5">
+    <div class="container container-md p-5">
         <!-- Order List標題 -->
         <div class="order">type List</div>
         <!-- Dashboard標題 -->

@@ -15,8 +15,12 @@
                                     onchange="checkQty(this)">
                                 <button class="btn" onclick="plus({{ $product->id }})">+</button>
                             </div>
+                            @if (Auth::check())
                             <button type="button" class="btn btn-success"
                                 onclick="addCart({{ $product->id }})">+Add</button>
+                            @else
+                            <a href="{{ route('login') }}" class="btn btn-success">加入購物車</a>
+                            @endif
                         </div>
                     </div>
                 </div>

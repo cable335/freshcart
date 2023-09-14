@@ -51,7 +51,7 @@ class FrontController extends Controller
         // ]);
         // if ($validator->fails()){
         //     return redirect(route('user.info'))->withErrors(['nameError'=>'字數過多']);
-        // }
+        // }v
     }
 
 
@@ -82,6 +82,7 @@ class FrontController extends Controller
         }
 
         return (object)[
+        // return 過去會是json格式，所以在另一邊要再轉格式
             'code' => $cart ? 1 : 0,
             'product_id' => $request->product_id,
         ];

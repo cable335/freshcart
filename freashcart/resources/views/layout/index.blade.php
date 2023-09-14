@@ -133,7 +133,7 @@
                         </div>
                         @endguest
                         <a style="margin: auto 0;" href="{{ route('message') }}">文章大樓</a>
-                        <a class="d-flex align-items-center px-2" href="{{ route('chekout') }}">
+                        <a class="d-flex align-items-center px-2" href="{{ route('other.checkout') }}">
                             <i class="bi bi-cart w-h-20"></i>
                         </a>
                         <button class="btn px-2" type="button" data-bs-toggle="offcanvas"
