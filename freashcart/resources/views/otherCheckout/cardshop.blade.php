@@ -100,7 +100,7 @@
             formData.append('cart_id', id);
             formData.append('_method', 'put');
             formData.append('qty', qty);
-            fetch('{{ route('other.checkout.updateQty') }}', {
+            fetch('{{ route("other.checkout.updateQty") }}', {
                 method: 'POST',
                 body: formData,
             }).then((res) => {

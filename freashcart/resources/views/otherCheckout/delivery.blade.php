@@ -15,7 +15,14 @@
                     <div class="mt-4 mb-3">
                         <span>配送資訊</span>
                     </div>
+                   @foreach ($errors->all() as $error)
+                   <div class="alert alert-danger" role="alert">
+                      {{ $error }}
+                    </div>
+                   @endforeach
+
                     <div class="row">
+                        {{-- @dd($errors) --}}
                         <div class="col">
                             <form action="{{ route('other.checkout.delivery.store') }}" method="POST">
                                 @csrf

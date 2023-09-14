@@ -162,6 +162,9 @@ class CheckoutController extends Controller
             'date' => 'required',
             'tel' => 'required|max:10',
             're' => 'required',
+        ], [
+            'tel.required' => '電話必填',
+            'tel.max' => '電話字數超過10個字',
         ]);
         $request->session()->put('name', $request->name);
         $request->session()->put('addr', $request->addr);
