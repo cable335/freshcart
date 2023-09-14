@@ -30,7 +30,7 @@
                                             <span>產品名稱</span>
                                             <p>{{ $item->product->name }}</p>
                                             <span>單價</span>
-                                            <p>{{ $item->product->price }}</p>
+                                            <p>${{ $item->product->price }}</p>
                                         </div>
                                         <div class="d-flex align-items-center">
                                             <button type="button"

@@ -5,10 +5,11 @@
             @foreach ($products as $product)
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="{{ $product->img_path }}" class="card-img-top" alt="...">
+                        <img src="{{ $product->img_path }}" class="card-img-top" alt="..." style="width: 150px; hight:150px">
                         <div class="card-body ">
                             <h5 class="card-title">{{ $product->name }}</h5>
-                            <p class="card-text">${{ $product->price }}</p>
+                            <p class="card-text">價格：${{ $product->price }}</p>
+                            <p class="card-text">商品資訊：{{ $product->desc }}</p>
                             <div class="border">
                                 <button class="btn" onclick="minus({{ $product->id }})">-</button>
                                 <input id="product{{ $product->id }}" type="number"value="1"
