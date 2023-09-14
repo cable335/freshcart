@@ -41,7 +41,7 @@
                             <li><a class="dropdown-item " href="{{ route('cart') }}"><img class="flag-img mb-1 me-2"
                                         src="./img/flag/germany.png" alt="">cart list</a></li>
                             <li><a class="dropdown-item " href="{{ route('oderlist') }}"><img class="flag-img mb-1 me-2"
-                                        src="./img/flag/germany.png" alt="">oderlist</a></li>
+                                        src="./img/flag/germany.png" alt="">查看訂單</a></li>
                         </ul>
                     </div>
                 </div>
@@ -132,13 +132,13 @@
                         @endauth
 
                         @guest
-                            <div>
+                            <div style="margin: auto 15px;">
                                 <a href="{{ route('login') }}">
-                                    還沒有登入哦 點此登入</a>
+                                    點此登入</a>
 
                             </div>
                         @endguest
-                        <a style="margin: auto 0;" href="{{ route('message') }}">文章大樓</a>
+                        <a style="margin: auto 15px;" href="{{ route('message') }}">文章大樓</a>
                         <a class="d-flex align-items-center px-2" href="{{ route('other.checkout') }}">
                             <i class="bi bi-cart w-h-20"></i>
                         </a>
