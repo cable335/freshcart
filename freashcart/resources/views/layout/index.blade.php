@@ -35,10 +35,13 @@
                             </svg>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('type.index') }}"><img class="flag-img mb-1 me-2"
-                                        src="./img/flag/united-kingdom.png" alt="">type list</a></li>
+                            <li><a class="dropdown-item" href="{{ route('type.index') }}"><img
+                                        class="flag-img mb-1 me-2" src="./img/flag/united-kingdom.png"
+                                        alt="">type list</a></li>
                             <li><a class="dropdown-item " href="{{ route('cart') }}"><img class="flag-img mb-1 me-2"
                                         src="./img/flag/germany.png" alt="">cart list</a></li>
+                            <li><a class="dropdown-item " href="{{ route('oderlist') }}"><img class="flag-img mb-1 me-2"
+                                        src="./img/flag/germany.png" alt="">oderlist</a></li>
                         </ul>
                     </div>
                 </div>
@@ -52,7 +55,7 @@
             <div class="container">
                 <div class="row fake">
                     <div class="col-xxl-2 col-lg-3 col-3 d-flex align-items-center">
-                        <a href="{{ route('shopping-car') }}"><img src="./img/freshcart-logo.svg" alt=""></a>
+                        <a href="{{ route('shopping-car') }}"><img src="{{ asset('/img/freshcart-logo.svg') }}" alt=""></a>
                     </div>
                     <div class="col-xxl-7 col-lg-6 col-6">
                         <div class="row">
@@ -99,11 +102,14 @@
                                                             aria-current="true">
                                                             The current link item
                                                         </a>
-                                                        <a href="#" class="list-group-item list-group-item-action">A
+                                                        <a href="#"
+                                                            class="list-group-item list-group-item-action">A
                                                             second link item</a>
-                                                        <a href="#" class="list-group-item list-group-item-action">A
+                                                        <a href="#"
+                                                            class="list-group-item list-group-item-action">A
                                                             third link item</a>
-                                                        <a href="#" class="list-group-item list-group-item-action">A
+                                                        <a href="#"
+                                                            class="list-group-item list-group-item-action">A
                                                             fourth link item</a>
                                                         <a class="list-group-item list-group-item-action disabled"
                                                             aria-disabled="true">A disabled link item</a>
@@ -118,19 +124,19 @@
                     </div>
                     <div class="col-xxl-3 col-lg-3 col-3 d-flex justify-content-end ">
                         @auth
-                        <div  style="margin: auto 0;">hi,{{ Auth::user()->name}}</div>
-                        <form method="post" action="{{ route('logout') }}" style="margin: auto 0;">
-                            @csrf
-                            <button type="submit" class="btn border" style="padding: 3px 6px;" >登出</button>
-                        </form>
+                            <div style="margin: auto 0;">hi,{{ Auth::user()->name }}</div>
+                            <form method="post" action="{{ route('logout') }}" style="margin: auto 0;">
+                                @csrf
+                                <button type="submit" class="btn border" style="padding: 3px 6px;">登出</button>
+                            </form>
                         @endauth
 
                         @guest
-                        <div>
-                            <a href="{{ route('login') }}">
-                            還沒有登入哦 點此登入</a>
+                            <div>
+                                <a href="{{ route('login') }}">
+                                    還沒有登入哦 點此登入</a>
 
-                        </div>
+                            </div>
                         @endguest
                         <a style="margin: auto 0;" href="{{ route('message') }}">文章大樓</a>
                         <a class="d-flex align-items-center px-2" href="{{ route('other.checkout') }}">
@@ -156,13 +162,15 @@
                                     </div>
                                     <div class="col-12 mb-3">
                                         <span> Email address</span>
-                                        <input type="text" class="form-control mt-2" placeholder="Enter Your address"
-                                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control mt-2"
+                                            placeholder="Enter Your address" aria-label="Recipient's username"
+                                            aria-describedby="basic-addon2">
                                     </div>
                                     <div class="col-12 mb-3">
                                         <span> Password</span>
-                                        <input type="text" class="form-control  my-2" placeholder="Enter Your Password"
-                                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control  my-2"
+                                            placeholder="Enter Your Password" aria-label="Recipient's username"
+                                            aria-describedby="basic-addon2">
                                         By Signup, you agree to our <a href=""> Terms of Service </a>& <a
                                             href="">Privacy Policy</a>
                                     </div>
@@ -210,7 +218,8 @@
                                                 <div class="col-6">
                                                     <div class="row">
                                                         <div class="col-4">
-                                                            <img class="img-64-64" src="./img/S__120037379.gif" alt="">
+                                                            <img class="img-64-64" src="./img/S__120037379.gif"
+                                                                alt="">
                                                         </div>
                                                         <div class="col-8">
                                                             <div class="row">
@@ -235,9 +244,11 @@
                                                                                 <path
                                                                                     d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
                                                                                 </path>
-                                                                                <line x1="10" y1="11" x2="10" y2="17">
+                                                                                <line x1="10" y1="11"
+                                                                                    x2="10" y2="17">
                                                                                 </line>
-                                                                                <line x1="14" y1="11" x2="14" y2="17">
+                                                                                <line x1="14" y1="11"
+                                                                                    x2="14" y2="17">
                                                                                 </line>
                                                                             </svg></span><span
                                                                             class="text-muted">Remove</span></a>
@@ -247,11 +258,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-4 d-flex m-auto">
-                                                    <button type="button" class="btn border" id="reduse">-1</button>
+                                                    <button type="button" class="btn border"
+                                                        id="reduse">-1</button>
                                                     <div id="total"
                                                         class="w-44-h-38 border d-flex align-items-center justify-content-center">
                                                     </div>
-                                                    <button type="button" class="btn border" id="add">+1</button>
+                                                    <button type="button" class="btn border"
+                                                        id="add">+1</button>
                                                 </div>
                                                 <div class="col-2 d-flex align-items-center">
                                                     <h6>$5.00</h6>
@@ -262,7 +275,8 @@
                                                 <div class="col-6">
                                                     <div class="row">
                                                         <div class="col-4">
-                                                            <img class="img-64-64" src="./img/S__120037379.gif" alt="">
+                                                            <img class="img-64-64" src="./img/S__120037379.gif"
+                                                                alt="">
                                                         </div>
                                                         <div class="col-8">
                                                             <div class="row">
@@ -287,9 +301,11 @@
                                                                                 <path
                                                                                     d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
                                                                                 </path>
-                                                                                <line x1="10" y1="11" x2="10" y2="17">
+                                                                                <line x1="10" y1="11"
+                                                                                    x2="10" y2="17">
                                                                                 </line>
-                                                                                <line x1="14" y1="11" x2="14" y2="17">
+                                                                                <line x1="14" y1="11"
+                                                                                    x2="14" y2="17">
                                                                                 </line>
                                                                             </svg></span><span
                                                                             class="text-muted">Remove</span></a>
@@ -299,11 +315,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-4 d-flex m-auto">
-                                                    <button type="button" class="btn border" id="reduse-2">-1</button>
+                                                    <button type="button" class="btn border"
+                                                        id="reduse-2">-1</button>
                                                     <div id="total-2"
                                                         class="w-44-h-38 border d-flex align-items-center justify-content-center">
                                                     </div>
-                                                    <button type="button" class="btn border" id="add-2">+1</button>
+                                                    <button type="button" class="btn border"
+                                                        id="add-2">+1</button>
                                                 </div>
                                                 <div class="col-2 d-flex align-items-center">
                                                     <h6>$5.00</h6>
@@ -314,7 +332,8 @@
                                                 <div class="col-6">
                                                     <div class="row">
                                                         <div class="col-4">
-                                                            <img class="img-64-64" src="./img/S__120037379.gif" alt="">
+                                                            <img class="img-64-64" src="./img/S__120037379.gif"
+                                                                alt="">
                                                         </div>
                                                         <div class="col-8">
                                                             <div class="row">
@@ -339,9 +358,11 @@
                                                                                 <path
                                                                                     d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
                                                                                 </path>
-                                                                                <line x1="10" y1="11" x2="10" y2="17">
+                                                                                <line x1="10" y1="11"
+                                                                                    x2="10" y2="17">
                                                                                 </line>
-                                                                                <line x1="14" y1="11" x2="14" y2="17">
+                                                                                <line x1="14" y1="11"
+                                                                                    x2="14" y2="17">
                                                                                 </line>
                                                                             </svg></span><span
                                                                             class="text-muted">Remove</span></a>
@@ -351,11 +372,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-4 d-flex m-auto">
-                                                    <button type="button" class="btn border" id="reduse-3">-1</button>
+                                                    <button type="button" class="btn border"
+                                                        id="reduse-3">-1</button>
                                                     <div id="total-3"
                                                         class="w-44-h-38 border d-flex align-items-center justify-content-center">
                                                     </div>
-                                                    <button type="button" class="btn border" id="add-3">+1</button>
+                                                    <button type="button" class="btn border"
+                                                        id="add-3">+1</button>
                                                 </div>
                                                 <div class="col-2 d-flex align-items-center">
                                                     <h6>$5.00</h6>
@@ -389,8 +412,9 @@
                                 <div class="offcanvas-body">
                                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                         <li class="nav-item">
-                                            <input type="text" class="form-control" placeholder="Search for products"
-                                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <input type="text" class="form-control"
+                                                placeholder="Search for products" aria-label="Recipient's username"
+                                                aria-describedby="basic-addon2">
                                         </li>
                                         <li class="nav-item">
                                             <button class="btn px-2 p-65 border w-100 mt-2" type="button"
@@ -404,32 +428,43 @@
                                             <a class="btn btn-primary w-100 d-flex justify-content-center align-items-center"
                                                 data-bs-toggle="collapse" href="#collapseExample" role="button"
                                                 aria-expanded="true" aria-controls="collapseExample">
-                                                <span class="me-2"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" viewBox="0 0 24 24" fill="none"
-                                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                                        stroke-linejoin="round" class="feather feather-grid">
-                                                        <rect x="3" y="3" width="7" height="7"></rect>
-                                                        <rect x="14" y="3" width="7" height="7"></rect>
-                                                        <rect x="14" y="14" width="7" height="7"></rect>
-                                                        <rect x="3" y="14" width="7" height="7"></rect>
+                                                <span class="me-2"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="16" height="16" viewBox="0 0 24 24"
+                                                        fill="none" stroke="currentColor" stroke-width="1.5"
+                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                        class="feather feather-grid">
+                                                        <rect x="3" y="3" width="7"
+                                                            height="7"></rect>
+                                                        <rect x="14" y="3" width="7"
+                                                            height="7"></rect>
+                                                        <rect x="14" y="14" width="7"
+                                                            height="7"></rect>
+                                                        <rect x="3" y="14" width="7"
+                                                            height="7"></rect>
                                                     </svg></span> All Departments
                                             </a>
                                             <div class="mt-2 collapse show" id="collapseExample">
                                                 <div class="card card-body">
                                                     <ul class="mb-0 list-unstyled">
-                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp; Eggs</a>
+                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp;
+                                                                Eggs</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Snacks &amp; Munchies</a>
+                                                        <li><a class="dropdown-item" href="">Snacks &amp;
+                                                                Munchies</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Fruits &amp; Vegetables</a>
+                                                        <li><a class="dropdown-item" href="">Fruits &amp;
+                                                                Vegetables</a>
                                                         </li>
                                                         <li><a class="dropdown-item" href="">Cold Drinks &amp;
                                                                 Juices</a></li>
-                                                        <li><a class="dropdown-item" href="">Breakfast &amp; Instant
+                                                        <li><a class="dropdown-item" href="">Breakfast &amp;
+                                                                Instant
                                                                 Food</a></li>
-                                                        <li><a class="dropdown-item" href="">Bakery &amp; Biscuits</a>
+                                                        <li><a class="dropdown-item" href="">Bakery &amp;
+                                                                Biscuits</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Chicken, Meat &amp;
+                                                        <li><a class="dropdown-item" href="">Chicken, Meat
+                                                                &amp;
                                                                 Fish</a></li>
                                                     </ul>
                                                 </div>
@@ -445,19 +480,25 @@
                                             <div class="mt-2 collapse show" id="collapseExample-1">
                                                 <div class="card card-body">
                                                     <ul class="mb-0 list-unstyled">
-                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp; Eggs</a>
+                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp;
+                                                                Eggs</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Snacks &amp; Munchies</a>
+                                                        <li><a class="dropdown-item" href="">Snacks &amp;
+                                                                Munchies</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Fruits &amp; Vegetables</a>
+                                                        <li><a class="dropdown-item" href="">Fruits &amp;
+                                                                Vegetables</a>
                                                         </li>
                                                         <li><a class="dropdown-item" href="">Cold Drinks &amp;
                                                                 Juices</a></li>
-                                                        <li><a class="dropdown-item" href="">Breakfast &amp; Instant
+                                                        <li><a class="dropdown-item" href="">Breakfast &amp;
+                                                                Instant
                                                                 Food</a></li>
-                                                        <li><a class="dropdown-item" href="">Bakery &amp; Biscuits</a>
+                                                        <li><a class="dropdown-item" href="">Bakery &amp;
+                                                                Biscuits</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Chicken, Meat &amp;
+                                                        <li><a class="dropdown-item" href="">Chicken, Meat
+                                                                &amp;
                                                                 Fish</a></li>
                                                     </ul>
                                                 </div>
@@ -473,19 +514,25 @@
                                             <div class="mt-2 collapse show" id="collapseExample-2">
                                                 <div class="card card-body">
                                                     <ul class="mb-0 list-unstyled">
-                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp; Eggs</a>
+                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp;
+                                                                Eggs</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Snacks &amp; Munchies</a>
+                                                        <li><a class="dropdown-item" href="">Snacks &amp;
+                                                                Munchies</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Fruits &amp; Vegetables</a>
+                                                        <li><a class="dropdown-item" href="">Fruits &amp;
+                                                                Vegetables</a>
                                                         </li>
                                                         <li><a class="dropdown-item" href="">Cold Drinks &amp;
                                                                 Juices</a></li>
-                                                        <li><a class="dropdown-item" href="">Breakfast &amp; Instant
+                                                        <li><a class="dropdown-item" href="">Breakfast &amp;
+                                                                Instant
                                                                 Food</a></li>
-                                                        <li><a class="dropdown-item" href="">Bakery &amp; Biscuits</a>
+                                                        <li><a class="dropdown-item" href="">Bakery &amp;
+                                                                Biscuits</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Chicken, Meat &amp;
+                                                        <li><a class="dropdown-item" href="">Chicken, Meat
+                                                                &amp;
                                                                 Fish</a></li>
                                                     </ul>
                                                 </div>
@@ -501,19 +548,25 @@
                                             <div class="mt-2 collapse show" id="collapseExample-3">
                                                 <div class="card card-body">
                                                     <ul class="mb-0 list-unstyled">
-                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp; Eggs</a>
+                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp;
+                                                                Eggs</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Snacks &amp; Munchies</a>
+                                                        <li><a class="dropdown-item" href="">Snacks &amp;
+                                                                Munchies</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Fruits &amp; Vegetables</a>
+                                                        <li><a class="dropdown-item" href="">Fruits &amp;
+                                                                Vegetables</a>
                                                         </li>
                                                         <li><a class="dropdown-item" href="">Cold Drinks &amp;
                                                                 Juices</a></li>
-                                                        <li><a class="dropdown-item" href="">Breakfast &amp; Instant
+                                                        <li><a class="dropdown-item" href="">Breakfast &amp;
+                                                                Instant
                                                                 Food</a></li>
-                                                        <li><a class="dropdown-item" href="">Bakery &amp; Biscuits</a>
+                                                        <li><a class="dropdown-item" href="">Bakery &amp;
+                                                                Biscuits</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Chicken, Meat &amp;
+                                                        <li><a class="dropdown-item" href="">Chicken, Meat
+                                                                &amp;
                                                                 Fish</a></li>
                                                     </ul>
                                                 </div>
@@ -529,19 +582,25 @@
                                             <div class="mt-2 collapse show" id="collapseExample-4">
                                                 <div class="card card-body">
                                                     <ul class="mb-0 list-unstyled">
-                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp; Eggs</a>
+                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp;
+                                                                Eggs</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Snacks &amp; Munchies</a>
+                                                        <li><a class="dropdown-item" href="">Snacks &amp;
+                                                                Munchies</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Fruits &amp; Vegetables</a>
+                                                        <li><a class="dropdown-item" href="">Fruits &amp;
+                                                                Vegetables</a>
                                                         </li>
                                                         <li><a class="dropdown-item" href="">Cold Drinks &amp;
                                                                 Juices</a></li>
-                                                        <li><a class="dropdown-item" href="">Breakfast &amp; Instant
+                                                        <li><a class="dropdown-item" href="">Breakfast &amp;
+                                                                Instant
                                                                 Food</a></li>
-                                                        <li><a class="dropdown-item" href="">Bakery &amp; Biscuits</a>
+                                                        <li><a class="dropdown-item" href="">Bakery &amp;
+                                                                Biscuits</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Chicken, Meat &amp;
+                                                        <li><a class="dropdown-item" href="">Chicken, Meat
+                                                                &amp;
                                                                 Fish</a></li>
                                                     </ul>
                                                 </div>
@@ -557,19 +616,25 @@
                                             <div class="mt-2 collapse show" id="collapseExample-5">
                                                 <div class="card card-body">
                                                     <ul class="mb-0 list-unstyled">
-                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp; Eggs</a>
+                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp;
+                                                                Eggs</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Snacks &amp; Munchies</a>
+                                                        <li><a class="dropdown-item" href="">Snacks &amp;
+                                                                Munchies</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Fruits &amp; Vegetables</a>
+                                                        <li><a class="dropdown-item" href="">Fruits &amp;
+                                                                Vegetables</a>
                                                         </li>
                                                         <li><a class="dropdown-item" href="">Cold Drinks &amp;
                                                                 Juices</a></li>
-                                                        <li><a class="dropdown-item" href="">Breakfast &amp; Instant
+                                                        <li><a class="dropdown-item" href="">Breakfast &amp;
+                                                                Instant
                                                                 Food</a></li>
-                                                        <li><a class="dropdown-item" href="">Bakery &amp; Biscuits</a>
+                                                        <li><a class="dropdown-item" href="">Bakery &amp;
+                                                                Biscuits</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Chicken, Meat &amp;
+                                                        <li><a class="dropdown-item" href="">Chicken, Meat
+                                                                &amp;
                                                                 Fish</a></li>
                                                     </ul>
                                                 </div>
@@ -585,19 +650,25 @@
                                             <div class="mt-2 collapse show" id="collapseExample-6">
                                                 <div class="card card-body">
                                                     <ul class="mb-0 list-unstyled">
-                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp; Eggs</a>
+                                                        <li><a class="dropdown-item" href="">Dairy, Bread &amp;
+                                                                Eggs</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Snacks &amp; Munchies</a>
+                                                        <li><a class="dropdown-item" href="">Snacks &amp;
+                                                                Munchies</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Fruits &amp; Vegetables</a>
+                                                        <li><a class="dropdown-item" href="">Fruits &amp;
+                                                                Vegetables</a>
                                                         </li>
                                                         <li><a class="dropdown-item" href="">Cold Drinks &amp;
                                                                 Juices</a></li>
-                                                        <li><a class="dropdown-item" href="">Breakfast &amp; Instant
+                                                        <li><a class="dropdown-item" href="">Breakfast &amp;
+                                                                Instant
                                                                 Food</a></li>
-                                                        <li><a class="dropdown-item" href="">Bakery &amp; Biscuits</a>
+                                                        <li><a class="dropdown-item" href="">Bakery &amp;
+                                                                Biscuits</a>
                                                         </li>
-                                                        <li><a class="dropdown-item" href="">Chicken, Meat &amp;
+                                                        <li><a class="dropdown-item" href="">Chicken, Meat
+                                                                &amp;
                                                                 Fish</a></li>
                                                     </ul>
                                                 </div>
@@ -636,7 +707,7 @@
                         </div>
                     </div>
                     <div class="col">
-                            <a href="{{ route('front.product') }}">product</a>
+                        <a href="{{ route('front.product') }}">product</a>
                     </div>
 
                 </div>
@@ -657,40 +728,53 @@
                             <div class="col-6">
                                 <!-- list -->
                                 <ul class="nav flex-column">
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Vegetables &amp; Fruits</a>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Vegetables &amp;
+                                            Fruits</a>
                                     </li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link"> Breakfast &amp; instant
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link"> Breakfast &amp;
+                                            instant
                                             food</a></li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link"> Bakery &amp; Biscuits</a>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link"> Bakery &amp;
+                                            Biscuits</a>
                                     </li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Atta, rice &amp; dal</a>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Atta, rice &amp;
+                                            dal</a>
                                     </li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Sauces &amp; spreads</a>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Sauces &amp;
+                                            spreads</a>
                                     </li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Organic &amp; gourmet</a>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Organic &amp;
+                                            gourmet</a>
                                     </li>
                                     <li class="nav-item mb-2"><a href="#!" class="nav-link"> Baby care</a></li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Cleaning essentials</a></li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Personal care</a></li>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Cleaning
+                                            essentials</a></li>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Personal care</a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="col-6">
                                 <!-- list -->
                                 <ul class="nav flex-column">
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Dairy, bread &amp; eggs</a>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Dairy, bread &amp;
+                                            eggs</a>
                                     </li>
                                     <li class="nav-item mb-2"><a href="#!" class="nav-link"> Cold drinks &amp;
                                             juices</a></li>
                                     <li class="nav-item mb-2"><a href="#!" class="nav-link"> Tea, coffee &amp;
                                             drinks</a></li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Masala, oil &amp; more</a>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Masala, oil &amp;
+                                            more</a>
                                     </li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Chicken, meat &amp; fish</a>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Chicken, meat &amp;
+                                            fish</a>
                                     </li>
                                     <li class="nav-item mb-2"><a href="#!" class="nav-link">Paan corner</a></li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link"> Pharma &amp; wellness</a>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link"> Pharma &amp;
+                                            wellness</a>
                                     </li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Home &amp; office</a></li>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Home &amp;
+                                            office</a></li>
                                     <li class="nav-item mb-2"><a href="#!" class="nav-link">Pet care</a></li>
                                 </ul>
                             </div>
@@ -715,9 +799,11 @@
                                     <!-- list -->
                                     <li class="nav-item mb-2"><a href="#!" class="nav-link">Payments</a></li>
                                     <li class="nav-item mb-2"><a href="#!" class="nav-link">Shipping</a></li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Product Returns</a></li>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Product Returns</a>
+                                    </li>
                                     <li class="nav-item mb-2"><a href="#!" class="nav-link">FAQ</a></li>
-                                    <li class="nav-item mb-2"><a href="./pages/shop-checkout.html" class="nav-link">Shop
+                                    <li class="nav-item mb-2"><a href="./pages/shop-checkout.html"
+                                            class="nav-link">Shop
                                             Checkout</a></li>
                                 </ul>
                             </div>
@@ -725,23 +811,30 @@
                                 <h6 class="mb-4">Become a Shopper</h6>
                                 <ul class="nav flex-column">
                                     <!-- list -->
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Shopper Opportunities</a>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Shopper
+                                            Opportunities</a>
                                     </li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Become a Shopper</a></li>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Become a Shopper</a>
+                                    </li>
                                     <li class="nav-item mb-2"><a href="#!" class="nav-link">Earnings</a></li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Ideas &amp; Guides</a></li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">New Retailers</a></li>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Ideas &amp;
+                                            Guides</a></li>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">New Retailers</a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="col-6 col-sm-6 col-md-3">
                                 <h6 class="mb-4">Freshcart programs</h6>
                                 <ul class="nav flex-column">
                                     <!-- list -->
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Freshcart programs</a></li>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Freshcart
+                                            programs</a></li>
                                     <li class="nav-item mb-2"><a href="#!" class="nav-link">Gift Cards</a></li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Promos &amp; Coupons</a>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Promos &amp;
+                                            Coupons</a>
                                     </li>
-                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Freshcart Ads</a></li>
+                                    <li class="nav-item mb-2"><a href="#!" class="nav-link">Freshcart Ads</a>
+                                    </li>
                                     <li class="nav-item mb-2"><a href="#!" class="nav-link">Careers</a></li>
                                 </ul>
                             </div>
@@ -752,15 +845,18 @@
                     <div class="col-12 col-md-5 col-lg-6 mt-0 ps-0 d-flex align-items-center">
                         <span class="me-2">Payment Partners</span>
                         <a class="me-2" href=""><img src="./img/pay/amazonpay.svg" alt=""></a>
-                        <a class="me-2" href=""><img src="./img/pay/american-express.svg" alt=""></a>
+                        <a class="me-2" href=""><img src="./img/pay/american-express.svg"
+                                alt=""></a>
                         <a class="me-2" href=""><img src="./img/pay/mastercard.svg" alt=""></a>
                         <a class="me-2" href=""><img src="./img/pay/paypal.svg" alt=""></a>
                         <a class="me-2" href=""><img src="./img/pay/visa.svg" alt=""></a>
                     </div>
                     <div class="col-12 col-md-7 col-lg-6 mt-0 pe-0 d-flex justify-content-end align-items-center">
                         <span class="me-3">Get deliveries with FreshCart</span>
-                        <a class="me-3" href=""><img class="img-140-41-41" src="./img/pay/appstore-btn.svg" alt=""></a>
-                        <a href=""><img class="img-140-41-41" src="./img/pay/googleplay-btn.svg" alt=""></a>
+                        <a class="me-3" href=""><img class="img-140-41-41" src="./img/pay/appstore-btn.svg"
+                                alt=""></a>
+                        <a href=""><img class="img-140-41-41" src="./img/pay/googleplay-btn.svg"
+                                alt=""></a>
                     </div>
                 </div>
                 <div class="row py-4">
@@ -778,8 +874,8 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 

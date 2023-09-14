@@ -19,7 +19,7 @@
                                 <a href="{{ route('infomation') }}">
                                     <button type="buutton" class="btn btn-secondary">回首頁</button>
                                 </a>
-                                <a href="">
+                                <a href="{{ route('oderlist') }}">
                                     <button type="button" class="btn btn-secondary">查看訂單</button>
                                 </a>
                             </div>

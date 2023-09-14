@@ -107,5 +107,12 @@ Route::middleware('auth','userRole:2')->group(function (){
     Route::get('/user/otherCheckout/pay',[CheckoutController::class,'other_checkout_pay'])->name('other.checkout.pay');
     Route::post('/user/otherCheckout/pay.store',[CheckoutController::class,'other_checkout_pay_store'])->name('other.checkout.pay.store');
     Route::get('/user/otherCheckout/complete',[CheckoutController::class,'other_checkout_complete'])->name('other.checkout.complete');
+    // 訂單查詢
+    Route::get('/oder/list',[CheckoutController::class,'oder_list'])->name('oderlist');
+    Route::get('/oder/list/detail/{order_forms_id}',[CheckoutController::class,'oder_detail'])->name('oderdetail');
 });
+
+
+Route::get('/ECPay/{order_id}',[CheckoutController::class,'ec_pay'])->name('ecpay');
+Route::get('/ECPay/return_back',[CheckoutController::class,'ec_pay_return'])->name('ecpayReturn');
 

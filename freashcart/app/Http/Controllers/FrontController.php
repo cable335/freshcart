@@ -87,4 +87,5 @@ class FrontController extends Controller
             'product_id' => $request->product_id,
         ];
     }
+
 }

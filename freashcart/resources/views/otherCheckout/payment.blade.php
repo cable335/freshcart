@@ -30,7 +30,7 @@
                                                     <p class="font-monospace">007-第一銀行</p>
                                                     <p class="font-monospace">007-第一銀行</p>
                                                     <p class="font-monospace">戶名:xxx</p>
-                                                    <p class="font-monospace">匯款後請聯繫洪先生09xxxxxxxx</p>
+                                                    <p class="font-monospace">匯款後請聯繫c先生09xxxxxxxx</p>
                                                     <p class="font-monospace"> 請告知帳號末五碼以便對帳</p>
                                                 </div>
                                             </label>

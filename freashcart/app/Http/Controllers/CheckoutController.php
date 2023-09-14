@@ -229,21 +229,100 @@ class CheckoutController extends Controller
             'total' => $total,
         ]);
 
-        session()->forget(['name', 'address', 'date', 'phone', 'menu']);
+        session()->forget(['name', 'addr', 'date', 'tel', 're']);
 
         $data = [
             'name' => $request->user()->name,
             'order_id' => $form->order_id,
             'total' => $total,
         ];
-
+        // $request->user()->email
         Mail::to('m2337733@gmail.com')->send(new OrderCreated($data));
 
-        return redirect(route('other.checkout.complete'));
+        if($request->flexRadioDefault == 1){
+            return redirect(route('other.checkout.complete'));
+        }
+        else{
+            return redirect(route('ecpay',['order_id' =>$form->id]));
+        }
+
+    }
+
+    public function ec_pay(Request $request ,$order_id)
+    {
+        $user = $request->user();
+        $order = OrderForm::where('user_id',$user->id)->find($order_id);
+
+        $string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
+        $shuffle = str_shuffle($string);
+        if ($order){
+            $data = (object)[
+                'MerchantID' => '3002607',
+                'MerchantTradeNo' => $order->order_id . substr($shuffle, 0, 3),
+                'MerchantTradeDate' => date('Y/m/d H:i:s'),
+                'PaymentType' => 'aio',
+                'TotalAmount' => $order->total,
+                'TradeDesc' => 'cable335',
+                'ItemName' => 'cable335s : ',
+                'ReturnURL' => route('ecpayReturn'),
+                'ChoosePayment' => 'ALL',
+                'CheckMacValue' => '',
+                'EncryptType' => 1,
+                'ClientBackURL' => route('shopping-car'),
+                'IgnorePayment' => 'WebATM#CVS#BARCODE',
+            ];
+        }
+
+
+        // 測試用
+        $hashKey = 'pwFHCqoQZGmho4w6';
+        // 測試用
+        $hasIv ='EkRm7iFT261dpevs';
+
+
+        $step1 = "ChoosePayment={$data->ChoosePayment}&ClientBackURL={$data->ClientBackURL}&EncryptType={$data->EncryptType}&IgnorePayment={$data->IgnorePayment}&ItemName={$data->ItemName}&MerchantID={$data->MerchantID}&MerchantTradeDate={$data->MerchantTradeDate}&MerchantTradeNo={$data->MerchantTradeNo}&PaymentType={$data->PaymentType}&ReturnURL={$data->ReturnURL}&TotalAmount={$data->TotalAmount}&TradeDesc={$data->TradeDesc}";
+
+        $step2 = "HashKey={$hashKey}&{$step1}&HashIV={$hasIv}";
+
+        $step3 = urlencode($step2);
+
+        $step4 = strtolower($step3);
+
+        $step5 = hash('sha256',$step4);
+
+        $step6 = strtoupper($step5);
+
+        $data->CheckMacValue = $step6;
+
+        return view('ecPay',compact('data'));
+    }
+
+    public function ec_pay_return(Request $request)
+    {
+        // 綠界打不回來 因為我們是本地測試伺服器
     }
 
     public function other_checkout_complete()
     {
         return view('otherCheckout/complete');
+    }
+
+
+
+    public function oder_list(Request $request){
+
+        $user = $request->user();
+        $orders = OrderForm::where('user_id', $user->id)->orderBy('id','desc')->get();
+        return view('userOrder',compact('orders'));
+    }
+
+
+    public function oder_detail(Request $request ,$order_forms_id){
+
+        $user = $request->user();
+        $order = OrderForm::where('user_id', $user->id)->find($order_forms_id);
+
+        return view('orderDetail',compact('order'));
     }
 }
