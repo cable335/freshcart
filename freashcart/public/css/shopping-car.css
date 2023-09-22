@@ -26,6 +26,10 @@ a {
     background-color: #f0f3f2;
 }
 
+.p-2{
+    display: flex;
+}
+
 @media(min-width:576px) {
     .container-fluid .row.h-27-43 {
         max-width: 540px;
@@ -46,6 +50,7 @@ a {
     .navbar-toggler.btn.btn-outline-secondary.fake {
         display: none !important;
     }
+
 }
 
 @media(min-width:1200px) {
@@ -156,6 +161,10 @@ body {
     .p-2.sm {
         padding: unset !important;
     }
+
+    .col-xxl-7.col-lg-6.col-6{
+        display: none;
+    }
 }
 
 @media (max-width:768px) {
@@ -175,7 +184,7 @@ body {
 @media (max-width:545px) {
     .w-520-h-518 {
         width: 300px !important;
-    }    
+    }
     .offcanvas-conter {
         right: calc((50% - 150px)) !important;
     }

@@ -4,23 +4,23 @@
         <div class="row row-cols-2 row-cols-lg-5 row-cols-md-3 g-2 g-lg-3">
             @foreach ($products as $product)
                 <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ $product->img_path }}" class="card-img-top" alt="..." style="width: 150px; hight:150px">
-                        <div class="card-body ">
+                    <div class="card" style="min-height:450px;">
+                        <img src="{{ $product->img_path }}" class="card-img-top" alt="..." style="height: 200px">
+                        <div class="card-body" style="position: relative;">
                             <h5 class="card-title">{{ $product->name }}</h5>
                             <p class="card-text">價格：${{ $product->price }}</p>
-                            <p class="card-text">商品資訊：{{ $product->desc }}</p>
+                            <p class="card-text" style="margin-bottom: 10px">商品資訊：{{ $product->desc }}</p>
                             <div class="border">
                                 <button class="btn" onclick="minus({{ $product->id }})">-</button>
                                 <input id="product{{ $product->id }}" type="number"value="1"
-                                    onchange="checkQty(this)">
+                                    onchange="checkQty(this)" style="width: 62%;">
                                 <button class="btn" onclick="plus({{ $product->id }})">+</button>
                             </div>
                             @if (Auth::check())
-                            <button type="button" class="btn btn-success"
-                                onclick="addCart({{ $product->id }})">+Add</button>
+                            <button type="button" class="btn btn-success" style="position: absolute; right:16px; bottom:10px;"
+                                onclick="addCart({{ $product->id }})">加入購物車</button>
                             @else
-                            <a href="{{ route('login') }}" class="btn btn-success">加入購物車</a>
+                            <a href="{{ route('login') }}" class="btn btn-success" style="position: absolute; right:16px; bottom:10px;">加入購物車</a>
                             @endif
                         </div>
                     </div>

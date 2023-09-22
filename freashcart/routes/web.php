@@ -110,6 +110,7 @@ Route::middleware('auth','userRole:2')->group(function (){
     // 訂單查詢
     Route::get('/oder/list',[CheckoutController::class,'oder_list'])->name('oderlist');
     Route::get('/oder/list/detail/{order_forms_id}',[CheckoutController::class,'oder_detail'])->name('oderdetail');
+    Route::post('/order/back-to-pau',[CheckoutController::class,'back_to_pay'])->name('user.order.backToPay');
 });
 
 

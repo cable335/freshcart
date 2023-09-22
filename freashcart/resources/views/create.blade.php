@@ -14,7 +14,9 @@
                             <input name="name" type="text" required>
                     </div>
                     <div>產品圖片
-                        <input name="image" type="file" accept="image/*" required>
+                        <input name="image" type="file" accept="image/*" required id="productImg">
+                        <div id="Img">
+                        </div>
                     </div>
                     <div>產品價格
                         <input name="price" type="number" required>
@@ -45,4 +47,25 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
+@endsection
+@section('js')
+<script>
+    const productImg = document.querySelector('#productImg');
+    const Img = document.querySelector('#Img');
+    productImg.addEventListener('change', (event) => {
+        uploadImage(event);
+    });
+    function uploadImage(event) {
+        const reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = () => {
+            console.log(reader.result);
+            Img.innerHTML= '';
+            Img.innerHTML+=`<img src="${reader.result}" class="" alt="上傳的照片" style="width:100px; height=100px";>`;
+        };
+        reader.onerror = (error) => {
+            console.log('Error: ', error);
+        };
+    }
+</script>
 @endsection

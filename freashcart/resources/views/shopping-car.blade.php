@@ -121,7 +121,7 @@
                         <div class="col">
                             <div class="card-body p-3 border-r-10 border">
                                 <div class="card-img">
-                                    <img class="w-100" src="{{ $product->img_path }}" alt="">
+                                    <img class="w-100" src="{{ $product->img_path }}" alt="" style="height: 150px">
                                     <div class="card-text mb-2">
                                         <a class="d-flex justify-content-start color-cjo" href="">along</a>
                                     </div>
@@ -130,7 +130,9 @@
                                     <div class="row">
                                         <div class="col-6 d-flex align-items-center">${{ $product->price }}</div>
                                         <div class="col-6 d-flex justify-content-end">
-                                            <button type="button" class="btn btn-success ">+Add</button>
+                                            <a href="{{ route('front.product') }}">
+                                                <button class="btn btn-success">看更多</button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -363,5 +365,46 @@
 @endsection
 
 @section('js')
-<script src="./js/js.js"></script>
+    <script src="./js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script>
+        const addCartRoute = document.querySelector('input#addCartRoute').value;
+        function minus(id) {
+            const input = document.querySelector(`input#product${id}`);
+            if(input.value === '1'){
+                input.value++;
+            }
+            input.value--;
+        }
+
+        function plus(id) {
+            const input = document.querySelector(`input#product${id}`);
+            input.value++;
+        }
+
+        function checkQty(el) {
+            if (el.value <= 0) {
+                el.value = 1;
+            }
+        }
+
+        function addCart(id) {
+            const input = document.querySelector(`input#product${id}`);
+            if (parseInt(input.value) <= 0) return;
+                const formData = new FormData();
+                formData.append('_token', '{{ csrf_token() }}');
+                formData.append('qty', input.value);
+                formData.append('product_id', id);
+                fetch(addCartRoute, {
+                    method: 'POST',
+                    body: formData,
+                }).then((res)=>{
+                    return res.json();
+                }).then((data)=>{
+                    if(data.code == 1){
+                        Swal.fire('成功加入商品');
+                    }
+                });
+        }
+    </script>
 @endsection

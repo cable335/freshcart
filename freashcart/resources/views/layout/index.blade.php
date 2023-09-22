@@ -144,7 +144,7 @@
                         </a>
                         <button class="btn px-2" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasExample-1" aria-controls="offcanvasExample">
-                            <img class="w-h-27" src="./img/icon/person.png" alt="">
+                            <img class="w-h-27" src="{{ asset('./img/icon/person.png') }}" alt="">
                         </button>
                         <div class="offcanvas offcanvas-conter w-520-h-518 border-r-10 p-3" tabindex="-1"
                             id="offcanvasExample-1" aria-labelledby="offcanvasExampleLabel">
@@ -189,7 +189,7 @@
                             <button class="navbar-toggler btn btn-outline-secondary sm" type="button"
                                 data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                                <img class="w-h-20" src="./img/icon/bag.png" alt="">
+                                <img class="w-h-20" src="{{ asset('./img/icon/bag.png') }}" alt="">
                             </button>
                             <div class="offcanvas offcanvas-end w-560" tabindex="-1" id="offcanvasNavbar"
                                 aria-labelledby="offcanvasNavbarLabel">

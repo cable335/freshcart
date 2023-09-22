@@ -17,6 +17,7 @@ class OrderForm extends Model
     // 4 => 完成訂單
     // 5 => 取消訂單
 
+
     public function productOrder()
     {
         // hasOne(關聯/對方的欄位/自己的欄位)

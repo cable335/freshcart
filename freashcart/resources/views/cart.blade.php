@@ -1,51 +1,33 @@
 @extends('layout.template')
 @section('main')
-<div class="container container-md p-5">
-    <!-- Order List標題 -->
-    <div class="order">order List</div>
-    <!-- Dashboard標題 -->
-    <div class="text">
-        <a href="#" class="green">Dashboard</a>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbspOrder List
+    <div class="container container-md p-5">
+        <!-- Order List標題 -->
+        <div class="order">order List</div>
+        <!-- Dashboard標題 -->
+        <div class="text">
+            <a href="#" class="green">Dashboard</a>&nbsp&nbsp&nbsp/&nbsp&nbsp&nbspOrder List
+        </div>
     </div>
-</div>
     <div class="big-box p-4 rounded rounded-4 border mt-4">
         <!-- 大方塊裡的head -->
         <div class="box-head">
             <div class="row">
                 <!-- 搜索输入框 -->
-                <div class="col-md-4 mb-2">
-                    <div class="row">
-                        <div class="col-12 d-flex">
-                            <form action="{{ route('cart') }}" method="GET" role="search">
-                                <input name="keyword" type="search" class="form-control rounded w-50" placeholder="搜尋名稱或描述" value="{{ $keyword }}" aria-label="Search"
-                                    aria-describedby="search-addon" />
+                <div class="col-6">
+                    <form action="{{ route('cart') }}" method="GET" role="search">
+                        <div class="row">
+                            <div class="col-10">
+                                <input name="keyword" type="search" class="form-control rounded" placeholder="搜尋名稱或描述"
+                                    value="{{ $keyword }}" aria-label="Search" aria-describedby="search-addon" />
+                            </div>
+                            <div class="col-2">
                                 <button type="submit" class="btn border">搜尋</button>
-                            </form>
+                            </div>
                         </div>
-                        <div class="col-12">
-                            <a class="btn btn-success" href="{{ route('create') }}"> 新增</a>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-
-                <!-- 中间的分隔 div -->
-                <div class="col-md-4"></div>
-
-                <!-- 下拉菜单 -->
-                <div class="col-md-4">
-                    <div class="dropdown text-end">
-                        <button class="btn dropdown-toggle box-no-border bg-light box-head-dropdown" type="button"
-                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Status
-                        </button>
-                        <ul class="dropdown-menu box-head-dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Status</a></li>
-                            <li><a class="dropdown-item" href="#">Success</a></li>
-                            <li><a class="dropdown-item" href="#">Pending</a></li>
-                            <li><a class="dropdown-item" href="#">Cancel</a></li>
-                        </ul>
-                    </div>
-                    <!-- 下拉菜单结束 -->
+                <div class="col-6 d-flex justify-content-end">
+                    <a class="btn btn-success" href="{{ route('create') }}"> 新增</a>
                 </div>
             </div>
         </div>
@@ -102,15 +84,14 @@
                                     </form>
                                 </td>
                             </tr>
-
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                <!-- 清單結束 -->
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
-            <hr>
-            {{ $products->links() }}
+            <!-- 清單結束 -->
+        </div>
+        <hr>
+        {{ $products->links() }}
         <!-- body結束 -->
         {{-- <div class="footer align-items-center text-nowrap d-md-flex justify-content-md-between">
             <div class="text">Showing 1 to 8 of 12 entries</div>

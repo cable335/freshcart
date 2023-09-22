@@ -16,7 +16,7 @@
         <div class="menu-hide p-3">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                    <a href="{{ route('infomation') }}"><img
+                    <a href="{{ route('shopping-car') }}"><img
                             src="https://freshcart.codescandy.com/assets/images/logo/freshcart-logo.svg"
                             alt=""></a>
                 </h5>
@@ -27,7 +27,7 @@
                     <!-- 內標題DashBoard -->
                     {{--           currentRouteName() 函式判斷當前套用哪個路由(route) --}}
                     <a @if (Route::currentRouteName() == 'backend.index') class="nav-link border"
-                @else
+                        @else
                     class="nav-link" @endif
                         href="{{ route('backend.index') }}">
                         <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
@@ -38,7 +38,7 @@
                     <div class="menutext">Store Managements</div>
                     <!-- 內標題Products -->
                     <a @if (Route::currentRouteName() == 'cart') class="nav-link border"
-                @else
+                        @else
                     class="nav-link" @endif
                         href="{{ route('cart') }}">
                         <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
@@ -46,7 +46,7 @@
                             Products</button>
                     </a>
                     <a @if (Route::currentRouteName() == 'type.index') class="nav-link border"
-                    @else
+                        @else
                         class="nav-link" @endif
                         href="{{ route('type.index') }}">
                         <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
@@ -82,7 +82,7 @@
                     aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                            <a href="https://freshcart.codescandy.com/dashboard/order-list.html"><img
+                            <a href="{{ route('shopping-car') }}"><img
                                     src="https://freshcart.codescandy.com/assets/images/logo/freshcart-logo.svg"
                                     alt=""></a>
                         </h5>
@@ -92,63 +92,34 @@
                     <div class="offcanvas-body">
                         <div class="row col-12">
                             <!-- 內標題DashBoard -->
-                            <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
-                                <img src="./img/left-menu/house.svg" alt="" class="menu-img">
-                                Dashboard</button>
+                            {{--           currentRouteName() 函式判斷當前套用哪個路由(route) --}}
+                            <a @if (Route::currentRouteName() == 'backend.index') class="nav-link border"
+                                @else
+                            class="nav-link" @endif
+                                href="{{ route('backend.index') }}">
+                                <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
+                                    <img src="{{ asset('img/left-menu/house.svg') }}" alt="" class="menu-img">
+                                    Dashboard</button>
+                            </a>
                             <!-- 內標題DashBoard結束 -->
                             <div class="menutext">Store Managements</div>
                             <!-- 內標題Products -->
-                            <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
-                                <img src="./img/left-menu/cart.svg" alt="" class="menu-img">
-                                Products</button>
-                            <!-- 內標題Products結束 -->
-
-                            <!-- 內標題Categories -->
-                            <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
-                                <img src="./img/left-menu/list-stars.svg" alt="" class="menu-img">
-                                Categories</button>
-                            <!-- 內標題Categories結束 -->
-
-                            <!-- 內標題Orders -->
-                            <p class="d-inline-flex gap-1">
-                                <button class="menuBtn box-no-border d-flex justify-content-start align-items-center"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                                    aria-expanded="false" aria-controls="collapseExample">
-                                    <img src="./img/left-menu/bag.svg" alt="" class="menu-img">
-                                    Orders
-                                </button>
-                            </p>
-                            <div class="collapse" id="collapseExample">
-                                <div class="box-no-border">
-                                    <ul>
-                                        <li><button
-                                                class="menuBtn box-no-border d-flex justify-content-start align-items-center">List</button>
-                                        </li>
-                                        <li><button
-                                                class="menuBtn box-no-border d-flex justify-content-start align-items-center">Single</button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- 內標題Orders結束 -->
-
-                            <!-- 內標題Sellers/Vendors -->
-                            <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
-                                <img src="./img/left-menu/shop.svg" alt="" class="menu-img">
-                                Sellers/Vendors</button>
-                            <!-- 內標題Sellers/Vendors結束 -->
-
-                            <!-- 內標題Customers -->
-                            <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
-                                <img src="./img/left-menu/people.svg" alt="" class="menu-img">
-                                Customers</button>
-                            <!-- 內標題Customers結束 -->
-
-                            <!-- 內標題Reviews -->
-                            <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
-                                <img src="./img/left-menu/star.svg" alt="" class="menu-img">
-                                Reviews</button>
-
+                            <a @if (Route::currentRouteName() == 'cart') class="nav-link border"
+                                @else
+                            class="nav-link" @endif
+                                href="{{ route('cart') }}">
+                                <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
+                                    <img src="{{ asset('img/left-menu/cart.svg') }}" alt="" class="menu-img">
+                                    Products</button>
+                            </a>
+                            <a @if (Route::currentRouteName() == 'type.index') class="nav-link border"
+                                @else
+                                class="nav-link" @endif
+                                href="{{ route('type.index') }}">
+                                <button class="menuBtn box-no-border d-flex justify-content-start align-items-center">
+                                    <img src="{{ asset('img/left-menu/cart.svg') }}" alt="" class="menu-img">
+                                    type</button>
+                            </a>
 
                         </div>
                     </div>
@@ -159,12 +130,12 @@
                 <div class="bell-and-user d-flex flex-shrink-0">
                     <div class="btn-group">
                         @auth
-                        <div style="margin: auto 0;">hi,{{ Auth::user()->name }}</div>
-                        <form method="post" action="{{ route('logout') }}" style="margin: auto 0;">
-                            @csrf
-                            <button type="submit" class="btn border" style="padding: 3px 6px;">登出</button>
-                        </form>
-                    @endauth
+                            <div style="margin: auto 0;">hi,{{ Auth::user()->name }}</div>
+                            <form method="post" action="{{ route('logout') }}" style="margin: auto 0;">
+                                @csrf
+                                <button type="submit" class="btn border" style="padding: 3px 6px;">登出</button>
+                            </form>
+                        @endauth
                     </div>
                 </div>
             </div>

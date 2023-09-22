@@ -303,6 +303,21 @@ class CheckoutController extends Controller
         // 綠界打不回來 因為我們是本地測試伺服器
     }
 
+
+    public function back_to_pay(Request $request)
+    {
+        $request->validate([
+            'orderID' => 'required|exists:order_forms,id',
+        ]);
+        $user = $request->user();
+        $order = OrderForm::where('user_id',$user->id)->find($request->orderID);
+        if($order){
+            if($order->status == 1){
+                return redirect(route('ecpay',['order_id' => $request->orderID]));
+            }
+        }
+            return redirect(route('oderlist'))->with(['msg'=>'訂單不存在']);
+    }
     public function other_checkout_complete()
     {
         return view('otherCheckout/complete');
