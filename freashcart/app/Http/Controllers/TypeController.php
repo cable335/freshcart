@@ -83,7 +83,7 @@ class TypeController extends Controller
                 // 刪除整筆資料
                 $value->delete();
             }
-            foreach ($request->image ?? [] as $value) {
+            foreach ($request->image ?? [] as $value) { 
 
                 // 上傳新圖片
                 $path = Storage::putFile('public/upload', $value);

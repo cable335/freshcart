@@ -29,7 +29,7 @@
                 <img src="{{ asset('img/qq.png') }}" alt="" class="w-75">
                 <a href="{{ route('other.checkout') }}" style="color:red;" >
                     <h1>
-                        老子強迫你在這邊結帳
+                        強迫你在這邊結帳
                     </h1>
                 </a>
             </div>

@@ -71,11 +71,6 @@
                             </path>
                         </svg>
                     </button>
-                    <!-- 搜尋欄 -->
-                    <div class="input-group rounded container-fluid">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                            aria-describedby="search-addon" />
-                    </div>
                 </div>
 
                 <div class="menu-offcanvas offcanvas offcanvas-start p-3 " tabindex="-1" id="offcanvasExample"

@@ -706,8 +706,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col">
-                        <a href="{{ route('front.product') }}">product</a>
+                    <div class="col d-flex align-items-center">
+                        <a href="{{ route('front.product') }}">所有產品</a>
                     </div>
 
                 </div>
